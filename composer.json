@@ -1,0 +1,7 @@
+{
+    "autoload": {
+        "files": [
+            "application/config/DB_config.php"
+        ]
+    }
+}
