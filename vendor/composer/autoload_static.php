@@ -10,9 +10,38 @@ class ComposerStaticInit6f33e0b3e40b1127c321bc38f3a812c6
         '5ef0d191856a30c0b39f3a693af798fe' => __DIR__ . '/../..' . '/application/config/DB_config.php',
     );
 
+    public static $prefixLengthsPsr4 = array (
+        'm' => 
+        array (
+            'model\\' => 6,
+        ),
+        'c' => 
+        array (
+            'core\\' => 5,
+            'controller\\' => 11,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'model\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/application/model',
+        ),
+        'core\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/application/core',
+        ),
+        'controller\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/application/controller',
+        ),
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit6f33e0b3e40b1127c321bc38f3a812c6::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit6f33e0b3e40b1127c321bc38f3a812c6::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }

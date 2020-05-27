@@ -1,5 +1,10 @@
 {
     "autoload": {
+        "psr-4": {
+            "controller\\": "application\\controller",
+            "core\\": "application\\core",
+            "model\\": "application\\model"
+        },
         "files": [
             "application/config/DB_config.php"
         ]

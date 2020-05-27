@@ -4,6 +4,13 @@ require_once __DIR__ . '/vendor/autoload.php';
 error_reporting(0);
 register_shutdown_function('catchFatalErrors');
 
+use model\BillingModel;
+use controller\BillingController;
+
+$model = new BillingModel();
+$billing = new BillingController($model);
+$billing->readBilling();
+
 function catchFatalErrors()
 {
 	$error = error_get_last();
